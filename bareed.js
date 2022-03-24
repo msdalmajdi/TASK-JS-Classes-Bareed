@@ -108,6 +108,8 @@ class Vendor extends Person {
     let chargedAmount = numberOfIceCreams * this.price;
     customer.wallet.money -= chargedAmount;
     this.wallet.money += chargedAmount;
+
+    // I forgot about credit and debit, this still works.
   };
 }
 
@@ -147,7 +149,7 @@ class Customer extends Person {
       this._isInRange(vendor) &&
       this._haveEnoughMoney(vendor, numberOfIceCreams)
     ) {
-      vendor.sellTo(this.Customer, numberOfIceCreams);
+      vendor.sellTo(this, numberOfIceCreams);
     }
   };
 }
